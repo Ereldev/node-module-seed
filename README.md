@@ -1,2 +1,4 @@
 # node-module-seed
-Module system for Node JS applications
+Simple Module system for Node JS applications
+
+Just download this seed project and start implementing modules (see module/SampleModule)
