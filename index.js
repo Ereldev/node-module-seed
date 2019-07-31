@@ -2,12 +2,12 @@ const Chalk = require("chalk");
 const Async = require("async");
 const fs = require("fs");
 
-const Package = require("../package.json");
 const config = require("config");
 
 exports = class App {
 
-    constructor(modulesDir) {
+    constructor(packageFile, modulesDir) {
+        this.packageFile = packageFile;
         this.modulesDir = modulesDir;
 
         this.modules = {};
@@ -43,7 +43,7 @@ exports = class App {
             }
 
             console.log(Chalk.green("---------------------------------------------------------"));
-            console.log(Chalk.green("        " + Package.displayName + " " + Package.version + " started"));
+            console.log(Chalk.green("        " + this.packageFile.displayName + " " + this.packageFile.version + " started"));
             console.log(Chalk.green("---------------------------------------------------------"));
         });
     }
