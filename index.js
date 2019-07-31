@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const config = require("config");
 
-exports = class App {
+module.exports = class App {
 
     constructor(packageFile, modulesDir) {
         this.packageFile = packageFile;
