@@ -7,6 +7,6 @@
         "start": "node src/main.js"
     },
     "dependencies": {
-        "node-project-seed": "git+https://github.com/Ereldev/node-module-seed.git"
+        "node-project-seed": "git+https://github.com/Ereldev/node-project-seed.git"
     }
 }
