@@ -5,9 +5,11 @@ const fs = require("fs");
 const Package = require("../package.json");
 const config = require("config");
 
-module.exports = class App {
+exports = class App {
 
-    constructor() {
+    constructor(modulesDir) {
+        this.modulesDir = modulesDir;
+
         this.modules = {};
     }
 
@@ -49,7 +51,7 @@ module.exports = class App {
     loadFiles(callback) {
         console.log("=> Loading modules ...");
 
-        fs.readdir(__dirname + "/module/", (error, files) => {
+        fs.readdir(this.modulesDir, (error, files) => {
             if (error) return callback(error);
 
             console.log("==> " + files.length + " module(s) found");
@@ -63,7 +65,7 @@ module.exports = class App {
             let name = file.substring(0, file.lastIndexOf("."));
             let moduleConfig = config.get(name);
 
-            let Module = require(__dirname + "/module/" + file)
+            let Module = require(this.modulesDir + file)
             this.modules[name] = new Module(this, moduleConfig);
 
             next();

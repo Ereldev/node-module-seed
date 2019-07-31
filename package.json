@@ -1,11 +1,9 @@
 {
-    "name": "node-module-seed",
-    "displayName": "Node Module seed",
-    "description": "Simple Module system for Node JS applications",
+    "name": "node-project-seed",
+    "displayName": "Node Project seed",
+    "description": "Simple project seed for Node JS applications",
     "version": "1.0.0",
-    "scripts": {
-        "start": "node src/main.js"
-    },
+    "main": "index.js",
     "dependencies": {
         "async": "^3.1.0",
         "chalk": "^2.4.2",
